@@ -4,10 +4,10 @@ import random
 
 def format_data(account):
     """Takes the account data and returns a printable format."""
-    account_name = account["name"]
-    account_descr = account["description"]
-    account_country = account["country"]
-    return f"{account_name}, a {account_descr}, from {account_country}"
+    account_name = account["character"]
+    account_descr = account["actor"]
+    account_country = account["movie"]
+    return f"{account_name}, played by {account_descr}, in the film {account_country}"
 
 def check_answer(user_guess, a_followers, b_followers):
     """Take a user's guess amd the follower counts and returns if they got it right."""
@@ -57,15 +57,4 @@ while game_should_continue:
     else:
         print(f"Sorry, that's wrong. Final score: {score}")
         game_should_continue = False
-
-
-# move B to the A position
-
-
-
-
-# TEXT
-
-# You're right! Current score: x.
-
-# Sorry, that's wrong. Final score: x
+        
