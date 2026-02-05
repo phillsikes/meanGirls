@@ -1,2 +1,3 @@
 .DS_Store
 game_data_old.py
+__pycache__/

@@ -10,14 +10,17 @@ def format_data(account):
     return f"{account_name}, played by {account_descr}, in the film {account_country}"
 
 def check_answer(user_guess, a_followers, b_followers):
-    """Take a user's guess amd the follower counts and returns if they got it right."""
+    """Take a user's guess and the follower counts and returns if they got it right."""
     if a_followers > b_followers:
         return user_guess == "a"
     else:
         return user_guess == "b"
 
-
+print("\n" * 20)
 print(logo)
+print("She doesn’t even go here!")
+print("\n" * 2)
+
 score = 0
 game_should_continue = True
 # generate a random account from the game data
@@ -32,12 +35,14 @@ while game_should_continue:
     if account_a == account_b:
         account_b = random.choice(data)
 
-    print(f"Compare A: {format_data(account_a)}.")
+    print("Who has more followers??")
+    print(f"A: {format_data(account_a)}.")
     print(vs)
-    print(f"Against B: {format_data(account_b)}.")
+    print(f"B: {format_data(account_b)}.")
+    
 
     # ask user to guess
-    guess = input("Who has more followers? Type 'A' or 'B': ").lower()
+    guess = input("Type 'A' or 'B': ").lower()
 
     # clear the screen
     print("\n" * 20)
@@ -53,8 +58,11 @@ while game_should_continue:
     # Score keeping.
     if is_correct:
         score += 1
-        print(f"You're right! Current score {score}")
+        print(f"That is so fetch!\nCurrent score {score}")
+        print("\n")
     else:
-        print(f"Sorry, that's wrong. Final score: {score}")
+        print("\n" * 4)
+        print(f"Gretchen, stop trying to make fetch happen! It’s not going to happen!\nSorry, wrong choice. Final score: {score}\nYou can’t sit with us!")
+        print("\n" * 4)
         game_should_continue = False
         
